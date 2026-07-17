@@ -1,0 +1,15 @@
+.DS_Store
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+.venv/
+venv/
+.python_packages/
+
+*.log
+*.tmp
+*.inspect.ndjson
+
+outputs/*/
+outputs/*_contact_sheet.png
