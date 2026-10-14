@@ -2,7 +2,7 @@
 
 **Live app:** https://zomato-review-explorer.streamlit.app/
 
-An interactive data science portfolio project by Puran: explore historical restaurant reviews, compare restaurants, and classify an English review as Positive, Neutral, or Negative.
+Explore historical restaurant reviews, compare restaurants, and classify an English review as Positive, Neutral, or Negative.
 
 ## App features
 
@@ -46,7 +46,6 @@ The app uses the included model; training is not performed during startup. No AP
 4. Set the entrypoint to `app.py` and choose **Python 3.12** in advanced settings.
 5. Deploy, try the filters and review form, then add the actual deployed URL and a screenshot here and to your portfolio.
 
-Deployment guide: https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app
 
 ## Model and reproducibility
 
