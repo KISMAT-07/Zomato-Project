@@ -246,8 +246,13 @@ with evaluation:
                 st.write(f"A separate model with the same parameters was evaluated on {audit['held_out_restaurants']} restaurants excluded from its training. Accuracy: {audit['accuracy']:.2%}; macro F1: {audit['f1_macro']:.2%}.")
                 st.caption('Exact normalized review overlap was removed from training. This is a diagnostic with fixed existing parameters, not a fresh nested model-selection result. It does not replace the shipped model or its primary metrics.')
         with st.expander('Original notebook model comparison'):
-            original = json.loads((ROOT / 'data/ml_model_results.json').read_text())
-            st.dataframe(pd.DataFrame([{'Model': name, 'Accuracy': item['tuned_metrics']['accuracy'], 'Macro F1': item['tuned_metrics']['f1_macro']} for name, item in original['models'].items()]), hide_index=True)
+            original_path = ROOT / 'data/ml_model_results.json'
+            if original_path.exists():
+                original = json.loads((ROOT / 'data/ml_model_results.json').read_text())
+                st.dataframe(pd.DataFrame([{'Model': name, 'Accuracy': item['tuned_metrics']['accuracy'], 'Macro F1': item['tuned_metrics']['f1_macro']} for name, item in original['models'].items()]), hide_index=True)
+            else:
+                st.info('The optional historical model comparison file is not included in this copy of the project.')
             st.caption('Historical experiments used different preprocessing and a random row split; results are not directly comparable to the app evaluation.')
     except (OSError, ValueError) as exc:
         st.error(f'Model evaluation results could not be loaded: {exc}')
+
