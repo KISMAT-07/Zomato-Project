@@ -1,5 +1,7 @@
 # Zomato Review Explorer
 
+**Live app:** https://zomato-review-explorer.streamlit.app/
+
 An interactive data science portfolio project by Puran: explore historical restaurant reviews, compare restaurants, and classify an English review as Positive, Neutral, or Negative.
 
 ## App features
@@ -10,6 +12,18 @@ An interactive data science portfolio project by Puran: explore historical resta
 - Held-out evaluation, per-class metrics, confusion matrix, and methodology.
 
 The dataset is historical (May 2016–May 2019). This independent project is not affiliated with Zomato and does not access live Zomato data.
+
+## New interactive features
+
+- Responsive branded header, metric cards, filter summaries, matching review counts and one-click filter reset.
+- Clickable Positive/Neutral/Negative examples and signed feature contributions for predictions, with supporting words highlighted in cleaned text.
+- Two-restaurant comparison including cost, ratings, sentiment share and common positive/negative review phrases.
+- CSV review analysis with a selectable column, downloadable results, per-row validation, a 5 MB/2,000-row limit and spreadsheet-safe exports.
+- Error examples and an exploratory evaluation on restaurants excluded from training.
+
+Comparison uses all reviews for the selected restaurants, independently of sidebar filters. Phrase counts are document counts of repeated bigrams, not causal explanations. Uploaded CSV data is processed in memory without being saved to project files.
+
+To regenerate diagnostics after retraining, run `python evaluate_model.py`. The diagnostic fits a separate estimator and does not replace the shipped artifact. The existing primary evaluation is preserved.
 
 ## Run locally
 
@@ -26,7 +40,7 @@ The app uses the included model; training is not performed during startup. No AP
 
 ## Deploy on Streamlit Community Cloud
 
-1. Commit and push the app files, `sentiment.py`, `requirements.txt`, `.streamlit/config.toml`, both `portfolio_*` artifacts, and existing CSV/JSON data to GitHub.
+1. Commit and push the app files, `sentiment.py`, `requirements.txt`, `.streamlit/config.toml`, `insights.py`, `data/model_diagnostics.json`, `data/model_error_examples.csv`, both `portfolio_*` artifacts, and existing CSV/JSON data to GitHub.
 2. Sign in to Streamlit Community Cloud and connect GitHub.
 3. Create an app from `purans07/Zomato-Project`, selecting the branch containing the app.
 4. Set the entrypoint to `app.py` and choose **Python 3.12** in advanced settings.
