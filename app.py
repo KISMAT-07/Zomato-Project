@@ -44,7 +44,6 @@ def load_results():
     return json.loads((ROOT / 'data/portfolio_model_results.json').read_text())
 
 st.markdown('<div class="hero"><h1>Zomato Review Explorer</h1><p>Discover great dining. Understand the feedback behind every rating.</p></div>', unsafe_allow_html=True)
-st.caption('Portfolio project by Puran • Historical dataset • Independent project; not affiliated with Zomato')
 try:
     data = load_data()
 except (OSError, ValueError) as exc:
