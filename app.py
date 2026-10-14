@@ -10,6 +10,16 @@ from sentiment import normalize_review
 ROOT = Path(__file__).resolve().parent
 COLORS = {'Positive': '#238B68', 'Neutral': '#E6A23C', 'Negative': '#E23744'}
 st.set_page_config(page_title='Zomato | Review Explorer', page_icon='🍽️', layout='wide', initial_sidebar_state='collapsed')
+# Hide hosting/developer actions while keeping the sidebar toggle available.
+st.markdown("""
+<style>
+[data-testid="stToolbar"],
+[data-testid="stAppDeployButton"],
+[data-testid="stMainMenu"] {
+    display: none !important;
+}
+</style>
+""", unsafe_allow_html=True)
 
 @st.cache_data
 def load_data():
@@ -41,7 +51,6 @@ with st.sidebar:
     restaurants = st.multiselect('Restaurant', sorted(choices['Restaurant'].dropna().unique()))
     min_rating, max_rating = st.slider('Review rating', 1.0, 5.0, (1.0, 5.0), 0.5)
     st.caption('Filters apply to the overview and restaurant explorer.')
-    st.link_button('View source on GitHub', 'https://github.com/purans07/Zomato-Project')
 filtered = choices[choices['Rating_num'].between(min_rating, max_rating)]
 if restaurants:
     filtered = filtered[filtered['Restaurant'].isin(restaurants)]
