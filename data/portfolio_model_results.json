@@ -1,0 +1,75 @@
+{
+  "model": "Logistic Regression",
+  "sklearn_version": "1.7.2",
+  "train_rows": 7847,
+  "test_rows": 2082,
+  "split": "StratifiedGroupKFold: identical normalized reviews kept together",
+  "accuracy": 0.8285302593659942,
+  "f1_macro": 0.726112386224572,
+  "best_cv_f1_macro": 0.7185335391405726,
+  "best_params": {
+    "classifier__C": 0.5,
+    "classifier__class_weight": "balanced"
+  },
+  "classification_report": {
+    "Negative": {
+      "precision": 0.8242677824267782,
+      "recall": 0.8509719222462203,
+      "f1-score": 0.8374070138150903,
+      "support": 463.0
+    },
+    "Neutral": {
+      "precision": 0.38387096774193546,
+      "recall": 0.5021097046413502,
+      "f1-score": 0.4351005484460695,
+      "support": 237.0
+    },
+    "Positive": {
+      "precision": 0.9366306027820711,
+      "recall": 0.8769898697539797,
+      "f1-score": 0.905829596412556,
+      "support": 1382.0
+    },
+    "accuracy": 0.8285302593659942,
+    "macro avg": {
+      "precision": 0.7149231176502616,
+      "recall": 0.7433571655471835,
+      "f1-score": 0.726112386224572,
+      "support": 2082.0
+    },
+    "weighted avg": {
+      "precision": 0.8487208912887892,
+      "recall": 0.8285302593659942,
+      "f1-score": 0.8370291929011804,
+      "support": 2082.0
+    }
+  },
+  "labels": [
+    "Negative",
+    "Neutral",
+    "Positive"
+  ],
+  "confusion_matrix": [
+    [
+      394,
+      57,
+      12
+    ],
+    [
+      48,
+      119,
+      70
+    ],
+    [
+      36,
+      134,
+      1212
+    ]
+  ],
+  "target_distribution": {
+    "Positive": 6251,
+    "Negative": 2423,
+    "Neutral": 1255
+  },
+  "preprocessing": "Shared raw-text pipeline; negation preserved; no stemming"
+}

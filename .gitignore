@@ -13,3 +13,4 @@ venv/
 
 outputs/*/
 outputs/*_contact_sheet.png
+.venv312/
