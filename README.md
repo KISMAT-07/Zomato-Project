@@ -42,7 +42,7 @@ The app uses the included model; training is not performed during startup. No AP
 
 1. Commit and push the app files, `sentiment.py`, `requirements.txt`, `.streamlit/config.toml`, `insights.py`, `data/model_diagnostics.json`, `data/model_error_examples.csv`, both `portfolio_*` artifacts, and existing CSV/JSON data to GitHub.
 2. Sign in to Streamlit Community Cloud and connect GitHub.
-3. Create an app from `purans07/Zomato-Project`, selecting the branch containing the app.
+3. Create an app from `KISMAT-07/Zomato-Project`, selecting the branch containing the app.
 4. Set the entrypoint to `app.py` and choose **Python 3.12** in advanced settings.
 5. Deploy, try the filters and review form, then add the actual deployed URL and a screenshot here and to your portfolio.
 
